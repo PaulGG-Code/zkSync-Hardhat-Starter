@@ -15,6 +15,8 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 	const deployer = new Deployer(hre, wallet);
 	const artifact = await deployer.loadArtifact("Greeter");
 
+	// *********** SECTION FOR BRIDGING FROM MAINNET TO ZKSYNC *************
+
 	// Deposit some funds to L2 in order to be to perform L2 transactions.
 	// const depositAmount = ethers.utils.parseEther("0.03");
 	// const depositHandle = await deployer.zkWallet.deposit ({
@@ -25,6 +27,8 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
 	// Wait until deposit is processed on zkSync
 	//await depositHandle.wait();
+
+	// ********* DEPOSIT METHOD ENDs HERE***********
 
 	// Deploy this contract. The returned object will be of a `Contract` type, similarly to ones in `ethers`.
 	// `PHRASE` is an argument for contract constractor
